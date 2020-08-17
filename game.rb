@@ -13,6 +13,7 @@ class Game
   #
 
   # user input to start the game
+end
 
 
 
