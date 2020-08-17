@@ -8,7 +8,8 @@ class Question
     @correct_answer = false
   end
 
-  
+end
+
   # relevant information
   # --------> player_input, answer
   

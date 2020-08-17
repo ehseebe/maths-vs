@@ -5,7 +5,7 @@
 # 3 lives
 # lose life if wrong answer
 
-Class Player
+class Player
   attr_accessor :name, :score
 
   def initialize(name)
