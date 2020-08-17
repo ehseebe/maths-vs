@@ -1,20 +1,17 @@
-  # methods
-  # --------> keep score, lives
-# Player 1
-# Player 2
-# 3 lives
-# lose life if wrong answer
-
 class Player
-  attr_accessor :name, :score
+  attr_accessor :name, :lives
 
   def initialize(name)
     self.name = name
-    self.score = 0
+    self.lives = 3
   end
 
-  def update_score
-    self.score += 1
+  def win_life
+    self.lives += 1
+  end
+
+  def lose_life
+    self.lives -= 1
   end
 
 end
