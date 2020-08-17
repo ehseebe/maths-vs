@@ -3,20 +3,22 @@ require './question'
 #import player, question
 
 class Game
-  attr_accessor :player1, :player2
+  attr_accessor :player1, :player2, :score
 
   def initialize
-    puts "Player 1: Enter your name > "
+    puts "Player 1: Enter your name >> "
     @player1 = Player.new(gets.chomp)
-    puts @player1.name
 
-    puts "Player 2: Enter your name > "
+    puts "Player 2: Enter your name >> "
     @player2 = Player.new(gets.chomp)
-    puts @player2.name
 
     player = [@player1.name, @player2.name].rotate!
 
-    Question.new(player.first)
+    question.new(player.first)
+
+    if question.correct_answer == true
+      #update player score
+
   end
 
   # relevant information
@@ -30,7 +32,6 @@ class Game
   # -----> start game, manage turns => game loop, print scores
   #
 
-  # user input to start the game
 end
 
 

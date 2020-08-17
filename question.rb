@@ -5,6 +5,7 @@ class Question
     n1 = rand(20)
     n2 = rand(20)
     answer = n1 + n2
+    correct_answer = false
 
     puts "#{player}! What's #{n1} + #{n2}?"
     player_answer = gets.chomp.to_i
@@ -19,6 +20,7 @@ class Question
 
   def right(player)
     @right_answer = ["Math LORD +1 pt", "OK genius!!! +1 pt", "You're a wizard! +1 pt"].shuffle
+    correct_answer = true
     puts @right_answer.first
   end
 
