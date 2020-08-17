@@ -1,11 +1,30 @@
 class Question
-  attr_accessor :player, :player_answer, :correct_answer
+  attr_accessor :player, :player_answer, :right_answer
 
   def initialize(player)
     n1 = rand(20)
     n2 = rand(20)
     answer = n1 + n2
-    @correct_answer = false
+
+    puts "#{player}! What's #{n1} + #{n2}?"
+    player_answer = gets.chomp.to_i
+
+    if player_answer == answer
+      right(player)
+    else
+      wrong(player)
+    end
+
+  end
+
+  def right(player)
+    @right_answer = ["Math LORD +1 pt", "OK genius!!! +1 pt", "You're a wizard! +1 pt"].shuffle
+    puts @right_answer.first
+  end
+
+  def wrong(player)
+    @wrong_answer = ["Sorry, no... -1 pt", "WRONG -1 pt", "Yikes! -1 pt"].shuffle
+    puts @wrong_answer.first
   end
 
 end

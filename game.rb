@@ -1,5 +1,5 @@
 require './player'
-# require './question'
+require './question'
 #import player, question
 
 class Game
@@ -13,6 +13,10 @@ class Game
     puts "Player 2: Enter your name > "
     @player2 = Player.new(gets.chomp)
     puts @player2.name
+
+    player = [@player1.name, @player2.name].rotate!
+
+    Question.new(player.first)
   end
 
   # relevant information
